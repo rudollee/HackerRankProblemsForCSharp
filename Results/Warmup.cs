@@ -45,6 +45,25 @@ namespace HackerRankProblemsForCSharp.Results
         }
         #endregion
 
+        #region Plus Minus
+        public static void plusMinus(List<int> arr)
+        {
+            var plusMinus = new List<int>() { 0, 0, 0 };
+            foreach (var number in arr)
+            {
+                if (number > 0) plusMinus[0]++;
+                else if (number < 0) plusMinus[1]++;
+                else plusMinus[2]++;
+            }
+
+            foreach (var number in plusMinus)
+            {
+                var ratio = Convert.ToDecimal(number) / arr.Count;
+                Console.WriteLine(ratio.ToString("0.000000"));
+            }
+        }
+        #endregion
+
         #region Staircase
         public static void staircase(int n)
         {
@@ -102,5 +121,6 @@ namespace HackerRankProblemsForCSharp.Results
             return DateTime.Parse(s).ToString("HH:mm:ss");
         }
         #endregion
+
     }
 }
